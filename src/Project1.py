@@ -8,7 +8,6 @@ from collections import Counter
 file_path = 'data/circles0.3.csv'
 data = pd.read_csv(file_path)
 
-# Visualize dataset
 plt.scatter(data.iloc[:, 0], data.iloc[:, 1], c=data.iloc[:, 2], cmap='viridis', edgecolor='k')
 plt.title("Circles Dataset")
 plt.xlabel("Feature 1")
