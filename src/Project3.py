@@ -1,11 +1,10 @@
-# Importing necessary libraries
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 
-file_path = 'Breastcancer.csv'  
+file_path = 'data/Breastcancer.csv'  
 data = pd.read_csv(file_path)
 
 X = data.iloc[:, :-1].values  
@@ -22,7 +21,7 @@ X_test_norm = scaler.transform(X_test)
 
 best_k = 1
 best_score = 0
-for k in range(1, 11):  # Testing k from 1 to 10
+for k in range(1, 11): 
     knn = KNeighborsClassifier(n_neighbors=k)
     scores = cross_val_score(knn, X_train_norm, y_train, cv=5) 
     if scores.mean() > best_score:

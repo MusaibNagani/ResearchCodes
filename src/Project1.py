@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from collections import Counter
 
 
-file_path = 'circles0.3.csv'
+file_path = 'data/circles0.3.csv'
 data = pd.read_csv(file_path)
 
 # Visualize dataset

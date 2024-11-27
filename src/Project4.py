@@ -19,7 +19,7 @@ def knn_predict(X_train, y_train, test_point, k=3):
     most_common = Counter(k_neighbors).most_common(1)
     return most_common[0][0]
 
-file_path = 'twogaussians42.csv' 
+file_path = 'data/twogaussians42.csv' 
 data = pd.read_csv(file_path)
 
 X = data.iloc[:, :-1].values  

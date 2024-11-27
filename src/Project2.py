@@ -1,4 +1,3 @@
-# Importing necessary libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -20,7 +19,7 @@ def knn_predict(X_train, y_train, test_point, k=3):
     most_common = Counter(k_neighbors).most_common(1)
     return most_common[0][0]
 
-datasets = ["circles0.3.csv", "twogaussians33.csv"]
+datasets = ["data/circles0.3.csv", "data/twogaussians33.csv"]
 
 for dataset in datasets:
     data = pd.read_csv(dataset)
