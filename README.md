@@ -1,23 +1,26 @@
 # k-Nearest Neighbors (k-NN) Implementation and Experiments
 
 ## Overview
-This project explores the fundamentals and applications of the k-Nearest Neighbors (k-NN) algorithm through a series of hands-on implementations, visualizations, and robustness experiments using synthetic and real-world datasets.
+This project explores the fundamentals and applications of the k-Nearest Neighbors (k-NN) algorithm through a series of hands-on implementations, visualizations, and robustness experiments using synthetic and real-world datasets. Additionally, we implement and analyze an outlier detection algorithm to identify anomalies in datasets using k-NN principles.
 
 ---
 
 ## Objectives
-1. **Project 1: Understanding k-NN Fundamentals**
-   - Learn the basics of k-NN by implementing it from scratch.
-   - Visualize decision boundaries for a simple dataset.
+### Project 1: Understanding k-NN Fundamentals
+- Learn the basics of k-NN by implementing it from scratch.
+- Visualize decision boundaries for a simple dataset.
 
-2. **Project 2: Experimenting with Synthetic Datasets**
-   - Investigate k-NN's behavior with various dataset geometries and configurations.
+### Project 2: Experimenting with Synthetic Datasets
+- Investigate k-NN's behavior with various dataset geometries and configurations.
 
-3. **Project 3: Improving Robustness**
-   - Explore the effects of noise and preprocessing techniques on k-NN performance.
+### Project 3: Improving Robustness
+- Explore the effects of noise and preprocessing techniques on k-NN performance.
 
-4. **Project 4: Evaluating Adversarial Attacks**
-   - Test the resilience of k-NN to label flipping and adversarial attacks.
+### Project 4: Evaluating Adversarial Attacks
+- Test the resilience of k-NN to label flipping and adversarial attacks.
+
+### Outlier Detection Algorithm
+- Use k-NN to identify anomalies or potential outliers in datasets and explore their properties.
 
 ---
 
@@ -42,8 +45,7 @@ This project explores the fundamentals and applications of the k-Nearest Neighbo
 ### **Project 2: Experimenting with Synthetic Datasets**
 - **Objective**: Explore k-NN's behavior with different dataset geometries.
 - **Datasets**:
-  - `moons1.csv`: Overlapping classes.
-  - `twogaussians33.csv` and `twogaussians42.csv`: Gaussian distributions.
+  - `twogaussians33.csv` Gaussian distributions.
 - **Steps**:
   1. Train a k-NN classifier (manual implementation or scikit-learn).
   2. Experiment with different values of k (e.g., 1, 5, 10).
@@ -58,14 +60,12 @@ This project explores the fundamentals and applications of the k-Nearest Neighbo
 ### **Project 3: Improving Robustness**
 - **Objective**: Test and enhance k-NN's robustness against noise and imbalanced data.
 - **Datasets**:
-  - `halfkernel.csv` (overlapping data).
   - `Breastcancer.csv` (real-world data).
 - **Steps**:
   1. Add Gaussian noise to datasets and observe the effect on k-NN performance.
   2. Normalize or standardize the data.
   3. Optimize hyperparameters (k, distance metrics) using cross-validation.
 - **Output**:
-  - Accuracy comparison before and after noise reduction.
   - Hyperparameter tuning results.
 
 ---
@@ -74,7 +74,6 @@ This project explores the fundamentals and applications of the k-Nearest Neighbo
 - **Objective**: Test k-NN's resilience to adversarial attacks, such as label flipping.
 - **Datasets**:
   - `twogaussians42.csv`
-  - `spiral1.csv` (challenging decision boundaries).
 - **Steps**:
   1. Implement a label-flipping attack by randomly flipping a percentage of training labels.
   2. Train k-NN with and without the poisoned dataset.
@@ -85,8 +84,27 @@ This project explores the fundamentals and applications of the k-Nearest Neighbo
 
 ---
 
+### **Outlier Detection Algorithm**
+- **Objective**: Identify anomalies or potential outliers in datasets using k-NN principles.
+- **Dataset**: `data1.xls` (Real-world dataset for credit card default prediction).
+- **Steps**:
+  1. Load the dataset and preprocess it by removing non-numeric columns and handling missing values.
+  2. Normalize features using standard scaling.
+  3. Apply k-NN to compute distances and derive anomaly scores:
+     - For each point, calculate the mean distance to its k-nearest neighbors.
+     - Define anomalies as points with anomaly scores exceeding a certain threshold (e.g., 95th percentile).
+  4. Visualize results using PCA for dimensionality reduction and plotting.
+  5. Analyze the impact of different k values and distance metrics (Euclidean, Manhattan, Cosine) on anomaly detection.
+- **Output**:
+  - Scatter plots with anomalies highlighted.
+  - Histogram of anomaly scores with threshold marked.
+  - List of detected anomalies with their scores and indices.
+
+---
+
 ## Additional Insights and Learning Outcomes
 - **Project 1**: Develop a deep understanding of k-NN and implement it from scratch.
 - **Project 2**: Visualize and analyze how k-NN adapts to various dataset geometries.
 - **Project 3**: Learn preprocessing techniques and optimize k-NN for better robustness.
 - **Project 4**: Explore adversarial learning and understand k-NN vulnerabilities.
+- **Outlier Detection Algorithm**: Gain hands-on experience with anomaly detection techniques, visualization, and analysis.
